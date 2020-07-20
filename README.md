@@ -68,9 +68,9 @@ https://developer.paypal.com/docs/classic/lifecycle/goingLive/
     {
       "https://error_documentation_link",
       "rel": "information_link",
-      "encType": "application/json" }
-      
+      "encType": "application/json"
       }
+}      
       
 ```
 
