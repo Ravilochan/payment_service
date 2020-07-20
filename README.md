@@ -140,6 +140,12 @@ This Service has API endpoints at
 
 /api/allPayments --> GET Request
 
+/api/allSuccess --> GET Request
+
+/api/allCancelled --> GET Request
+
+/api/allError --> GET Request
+
 ```
 ### For /api/payment - POST Request:
 Data sending to Request in the body should be like
