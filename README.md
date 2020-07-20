@@ -69,7 +69,7 @@ https://developer.paypal.com/docs/classic/lifecycle/goingLive/
 },
   "links":
     {
-      "https://error_documentation_link",
+      "url":"https://error_documentation_link",
       "rel": "information_link",
       "encType": "application/json"
       }
