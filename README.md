@@ -168,6 +168,12 @@ This Service has API endpoints at
 
 /api/allError --> GET Request
 
+/api/successPayments/:id -->GET Request
+
+/api/cancelledPayments/:id -->GET Request
+
+/api/errorPayments/:id -->GET Request
+
 ```
 
 ### For /api/payment - POST Request:
@@ -492,7 +498,7 @@ Response :
 }
 ```
 
-### For /api/sucessPayments/:id - GET Request:
+### For /api/successPayments/:id - GET Request:
 
 :id is the unique user id by User Service
 Request:
