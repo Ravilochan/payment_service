@@ -65,6 +65,37 @@ app.get("/api/allError", (req, res) => {
     .catch((err) => res.json({ err }));
 });
 
+app.get("/api/payments/:id", (req, res) => {
+  Payment.find({ user: req.params.id })
+    .then((payment) => res.json({ payment }))
+    .catch((err) => res.json({ err }));
+});
+
+app.get("/api/successPayments/:id", (req, res) => {
+  Payment.find({ user: req.params.id, "data.type": "Success" })
+    .then((payment) => res.json({ payment }))
+    .catch((err) => res.json({ err }));
+});
+
+app.get("/api/cancelledPayments/:id", (req, res) => {
+  Payment.find({ user: req.params.id, "data.type": "Cancelled" })
+    .then((payment) => res.json({ payment }))
+    .catch((err) => res.json({ err }));
+});
+
+app.get("/api/errorPayments/:id", (req, res) => {
+  Payment.find({ user: req.params.id, "data.type": "Error" })
+    .then((payment) => res.json({ payment }))
+    .catch((err) => res.json({ err }));
+});
+
+// app.get("/api/payment/remove", (req, res) => {
+//   Payment.deleteMany({})
+//     .then((payment) => res.json({ payment }))
+//     .catch((err) => res.json({ err }));
+// });
+//Dangerous Endpoint ==> to delete all payments
+
 app.listen(PORT, () =>
   console.log(`Server Started at : http://localhost:${PORT}`)
 );
