@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-// const async = require("async");
 
 const MONGOURI =
   "mongodb+srv://mern:cq3iwBBedA4paAAe@cluster0-npseq.gcp.mongodb.net/pay?retryWrites=true&w=majority";
@@ -9,7 +8,6 @@ const cors = require("cors");
 const app = express();
 
 const Payment = require("./models/payment");
-const payment = require("./models/payment");
 
 app.use(cors());
 app.use(express.json());
@@ -47,6 +45,24 @@ app.post("/api/payment", (req, res) => {
 
 app.get("/api/allPayments", (req, res) => {
   Payment.find({}).then((allPayments) => res.json({ allPayments }));
+});
+
+app.get("/api/allSuccess", (req, res) => {
+  Payment.find({ "data.type": "Success" })
+    .then((success) => res.json({ success }))
+    .catch((err) => res.json({ err }));
+});
+
+app.get("/api/allCancelled", (req, res) => {
+  Payment.find({ "data.type": "Cancelled" })
+    .then((Cancelled) => res.json({ Cancelled }))
+    .catch((err) => res.json({ err }));
+});
+
+app.get("/api/allError", (req, res) => {
+  Payment.find({ "data.type": "Error" })
+    .then((Error) => res.json({ Error }))
+    .catch((err) => res.json({ err }));
 });
 
 app.listen(PORT, () =>
