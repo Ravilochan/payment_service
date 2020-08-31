@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "d2c05f39-3032-46c6-856b-ca8908ed569e",
+		"name": "PaymentService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:7001/api/allPayments",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:7001/api/allPayments",
+					"host": [
+						"localhost"
+					],
+					"port": "7001",
+					"path": [
+						"api",
+						"allPayments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "making Success payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n\"user\":\n     {\n     \"_id\":\"5d6ede6a0ba62570afcedd3a\"\n     },\n\"cartDetails\":\n     {\n     \"_id\":\"5d6ede6a0ba62570afcedd32\",\n     \"idea_owner\": \"String\",\n     \"idea_owner_name\": \"String2\",\n     \"idea_genre\": \"String3\",\n     \"idea_headline\": \"String idea_name\",\n     \"idea_description\": \"String idea_description\",\n     \"price\": 50\n     },\n\"paymentData\":\n     {\n     \"paid\":\"true\",\n     \"cancelled\": \"false\",\n     \"paymentToken\": \"String2\",\n     \"paymentID  \": \"String3\",\n     \"intent\": \"String\",\n     \"billingID \": \"5d6ede6a0ba62570afcedd32\",\n     \"email\": \"xyz@gamil.com\",\n     \"address\":\n     { \"recipient_name\": \"John Doe\",\n       \"line1\": \"1 Main St\",\n       \"city\": \"San Jose\",\n       \"state\": \"CA\",\n       \"postal_code\": \"95131\",\n       \"country_code\": \"US\"\n     },\n\t\"type\":\"Success\"\n}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:7001/api/payment",
+					"host": [
+						"localhost"
+					],
+					"port": "7001",
+					"path": [
+						"api",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allSuccess",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:7001/api/allCancelled",
+					"host": [
+						"localhost"
+					],
+					"port": "7001",
+					"path": [
+						"api",
+						"allCancelled"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "successPayments of user-1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:7001/api/cancelledPayments/5d6ede6a0ba62570afcedd3a",
+					"host": [
+						"localhost"
+					],
+					"port": "7001",
+					"path": [
+						"api",
+						"cancelledPayments",
+						"5d6ede6a0ba62570afcedd3a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allCancelled",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:7001/api/allCancelled",
+					"host": [
+						"localhost"
+					],
+					"port": "7001",
+					"path": [
+						"api",
+						"allCancelled"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "allError",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:7001/api/allError",
+					"host": [
+						"localhost"
+					],
+					"port": "7001",
+					"path": [
+						"api",
+						"allError"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancelledPayments of user-1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:7001/api/cancelledPayments/5d6ede6a0ba62570afcedd3a",
+					"host": [
+						"localhost"
+					],
+					"port": "7001",
+					"path": [
+						"api",
+						"cancelledPayments",
+						"5d6ede6a0ba62570afcedd3a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "errorPayments of user-1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:7001/api/errorPayments/5d6ede6a0ba62570afcedd3a",
+					"host": [
+						"localhost"
+					],
+					"port": "7001",
+					"path": [
+						"api",
+						"errorPayments",
+						"5d6ede6a0ba62570afcedd3a"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
