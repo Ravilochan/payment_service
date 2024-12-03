@@ -12,6 +12,6 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.0.0",
-    "mongoose": "^5.9.24"
+    "mongoose": "^8.8.3"
   }
 }
